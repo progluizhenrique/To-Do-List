@@ -1,35 +1,61 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import ToDo from "./components/ToDo";
+import ToDoForm from "./components/ToDoForm";
 
-function App() {
-  const [count, setCount] = useState(0)
+// Em react todo objeto de uma lista do estado deve ter uma chave primária
+
+function App () {
+  const [toDos, setToDos] = useState([
+    {
+      id: 1,
+      text: "Criar trabalho x no sistema",
+      category: "Trabalho",
+      isComplety: false
+    },
+    {
+      id: 2,
+      text: "Ir pra academia",
+      category: "Academia",
+      isComplety: false
+    },
+    {
+      id: 3,
+      text: "Estudar React",
+      category: "Estudos",
+      isComplety: false
+    }
+  ]);
+
+
+
+  const addToDo = (text, category) => {
+    const newToDo = [
+      ...toDos,
+      {
+        id: Math.floor(Math.random() * 1000),
+        text,
+        category,
+        isComplety: false
+      }
+    ]
+
+    setToDos(newToDo);
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="app">
+      <h1>Lista de Tarefas</h1>
+      <div className="toDoList">
+        {
+          toDos.map((toDo) => (
+            <ToDo key={toDo.id} toDo={toDo}/>
+          ))
+        }
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      <ToDoForm addToDo={addToDo}/>
+    </div>
   )
 }
 
-export default App
+export default App;
