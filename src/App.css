@@ -28,6 +28,9 @@ p {
     padding: 15px;
     border-radius: 7px;
     margin: 10px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .toDoList {
@@ -64,10 +67,11 @@ input {
 input, select {
     padding: 5px;
     margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
+    border: 1px solid #333;
+    border-radius: 5px;
     width: 100%;
     outline: 0;
+    background-color: #efefef;
 }
 
 .remove {
