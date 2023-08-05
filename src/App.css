@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    padding: 30px;
+    height: 100%;
+    background-color: #310035;
+}
+
+.app {
+    max-width: 800px;
+    background-color: #efefef;
+    margin: 0px auto;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px black;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    margin: 10px 0px;
+}
+
+.toDo {
+    background-color: #cdcdcd;
+    padding: 15px;
+    border-radius: 7px;
+    margin: 10px 0px;
+}
+
+.toDoList {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #555;
+}
+
+button {
+    box-sizing: border-box;
+    background-color: #387802;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.3s;
+    margin-right: 5px;
+}
+
+button:hover {
+    opacity: 1.0;
+}
+
+.toDoForm {
+    margin-bottom: 30px;
+}
+
+input {
+    box-sizing: border-box;
+}
+
+input, select {
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    width: 100%;
+    outline: 0;
+}
+
+.remove {
+    background-color: #C43B0E;
+}
